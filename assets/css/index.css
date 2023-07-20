@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@700&family=Great+Vibes&display=swap");
+
+:root {
+  --bg-red: #f40027;
+  --bg-white: #ffffff;
+  --bg-black: #000000;
+  --bg-yellow: #ff8400;
+  --text: "Dancing Script", cursive;
+  --bg-beige: #f5d4b7;
+  --bg-light-beige: #fff1e2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+.nav-item:nth-of-type(1) {
+  background: var(--bg-black);
+  border-radius: 10px 10px;
+  transition: all 1.5 ease;
+}
+
+.nav-item:hover {
+  background: var(--bg-black);
+  border-radius: 10px 10px;
+  transition: all 1.5 ease;
+}
+.orderBtn {
+  width: 50%;
+  margin: 0 25%;
+  color: var(--bg-white);
+}
+.orderBtn:hover {
+  background: var(--bg-white);
+  color: var(--bg-red);
+}
+.logo:hover {
+  border: 2px dotted var(--bg-white);
+  animation-name: logo1;
+  animation-duration: 10s;
+  padding: 3px;
+}
+@keyframes logo1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.home {
+  max-height: 500px;
+  position: relative;
+}
+.carousel-control-prev {
+  height: 10%;
+  width: 50px;
+  border-radius: 50%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  top: 90%;
+  left: 0;
+}
+.carousel-control-next {
+  height: 10%;
+  width: 50px;
+  border-radius: 50%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  top: 90%;
+  right: 0;
+}
+/* menu title */
+.menu {
+  background: var(--bg-yellow);
+  border-radius: 18px 18px;
+  color: var(--bg-white);
+  text-decoration: none;
+}
+.menu:hover {
+  color: var(--bg-white);
+}
+
+/* card 5 */
+.card-text {
+  position: relative;
+}
+.card-over {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+}
+.path {
+  background: var(--bg-yellow);
+  width: 150px;
+  height: 120px;
+}
+/* footer */
+.footer-a {
+  color: #ffffff;
+  opacity: 50%;
+}
+.footer-a:hover {
+  color: #ffffff;
+  opacity: 100%;
+  border-bottom: 1px solid #ffffff;
+}
+.facebook {
+  color: #ffffff;
+}
+.bg-fb:hover {
+  background: #4267b2 !important;
+}
+.bg-tw:hover {
+  background: #00acee !important;
+}
+.bg-td:hover {
+  background: #ff0000 !important;
+}
+.bg-in:hover {
+  background: linear-gradient(
+    180deg,
+    #4f5bd5,
+    #962fbf,
+    #d62976,
+    #fa7e1e,
+    #feda75
+  ) !important;
+}
+/*  */
+
+/* scroll to top */
+.to-TOP {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+}
+.to-TOP.active {
+  opacity: 1;
+}
+/*  */
+
+.login-card {
+  box-shadow: 6px 3px 10px 2px;
+}
+.price-card {
+  display: none;
+  box-shadow: 1px 1px 9px 1px;
+}
+
+@media only screen and (min-width: 992px) {
+  .login_text {
+    position: relative;
+  }
+  .login-card {
+    position: relative;
+    z-index: 2;
+  }
+  .price-card {
+    display: block;
+    left: -30px;
+    z-index: 1;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .card_login {
+    height: 10vh;
+  }
+  .login-card {
+    position: relative;
+    top: -27rem;
+    left: -14rem;
+  }
+  .price-card {
+    position: relative;
+    top: -27rem;
+    left: -15rem;
+  }
+}

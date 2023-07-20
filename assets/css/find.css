@@ -1,0 +1,50 @@
+:root {
+  --bg-red: #f40027;
+  --bg-black: #000000;
+  --bg-white: #ffffff;
+}
+
+.box:hover {
+  cursor: pointer;
+  background: #3f40401f;
+}
+.pagination {
+  --bs-pagination-active-bg: #dc3545;
+  --bs-pagination-active-border-color: #dc3545;
+  --bs-pagination-color: black;
+  --bs-pagination-hover-color: #dc3545;
+}
+
+/* footer */
+.footer-a {
+  color: #ffffff;
+  opacity: 50%;
+}
+.footer-a:hover {
+  color: #ffffff;
+  opacity: 100%;
+  border-bottom: 1px solid #ffffff;
+}
+.facebook {
+  color: #ffffff;
+}
+.bg-fb:hover {
+  background: #4267b2 !important;
+}
+.bg-tw:hover {
+  background: #00acee !important;
+}
+.bg-td:hover {
+  background: #ff0000 !important;
+}
+.bg-in:hover {
+  background: linear-gradient(
+    180deg,
+    #4f5bd5,
+    #962fbf,
+    #d62976,
+    #fa7e1e,
+    #feda75
+  ) !important;
+}
+/*  */

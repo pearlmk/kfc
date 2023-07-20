@@ -1,0 +1,42 @@
+.gallery {
+  width: auto;
+  display: flex;
+  overflow-x: scroll;
+}
+.gallery ul {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+  flex: none;
+  display: grid;
+  align-items: end;
+}
+
+.gallery li img {
+  width: 60%;
+  filter: grayscale(70%);
+  transition: transform 0.5s;
+}
+.gallery li {
+  list-style: none;
+}
+h6 {
+  font-size: small;
+  margin-top: 13px;
+}
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+.gallery-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+.gallery ul img:hover {
+  filter: grayscale(0);
+  cursor: pointer;
+  transform: scale(1.1);
+}

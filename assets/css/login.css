@@ -1,0 +1,27 @@
+:root {
+  --bg-red: #f40027;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+}
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#input-error {
+  background: url("/assets/img/login/Error.svg") no-repeat left center;
+  color: #f40027;
+  background-size: auto;
+  padding-left: 20px;
+  width: 45%;
+  text-align: start;
+  display: none;
+}
