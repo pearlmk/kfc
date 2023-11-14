@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KFC MENU</title>
     <!-- bootstrap link -->
-    <link
-      rel="stylesheet"
-      href="bootstrap-5.2.3-dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.min.css" />
     <!-- font awesome link -->
     <link
       rel="stylesheet"
@@ -31,11 +28,7 @@
       <div class="container pt-2">
         <div class="row">
           <div class="col-6 mt-3">
-            <img
-              src="img/login/KFC_logo.svg"
-              alt="kfc logo"
-              loading="lazy"
-            />
+            <img src="img/login/KFC_logo.svg" alt="kfc logo" loading="lazy" />
           </div>
           <div class="col-6 text-end">
             <div class="list-inline">
@@ -64,11 +57,31 @@
                   width="70"
                   alt="bucket"
                   loading="lazy"
+                  data-bs-target="#offcanvas"
+                  data-bs-toggle="offcanvas"
                 />
                 <div
-                  class="card-img-overlay"
-                  style="position: absolute; top: 25px; right: 28px"
-                ></div>
+                  class="card-img-overlay text-dark fw-bold fs-5"
+                  style="position: absolute; top: 22px; right: 27px"
+                  id="count"
+                >
+                  0
+                </div>
+                <div
+                  class="offcanvas offcanvas-end text-dark text-center"
+                  tabindex="-1"
+                  id="offcanvas"
+                  aria-labelledby="offcanvas"
+                >
+                  <div class="offcanvas-header fs-5 fw-bold">Orders</div>
+                  <div class="offcanvas-body">
+                    <div id="cartItem">your cart is empty</div>
+                  </div>
+                  <div class="offcanvas-footer">
+                    <h4>Total</h4>
+                    <span id="total" class="fs-4 fw-bold">$ 00.00</span>
+                  </div>
+                </div>
               </a>
             </div>
           </div>
@@ -89,66 +102,83 @@
                 width="60"
                 alt=""
               />
-              <h4 class="h6 fw-bolder display-6">KFC MENU</h4>
+              <h4 class="h5 fw-bolder display-6">MENU</h4>
             </div>
-            <div id="list-example" class="list-group">
+            <div
+              id="list-example"
+              class="list-group d-flex flex-row flex-lg-column overflow-scroll text-nowrap w-100 my-3 py-2"
+            >
               <a
-                class="list-group-item list-group-item-action my-1"
+                class="list-group-item list-group-item-action mx-3 p-1 ps-lg-2 my-lg-3 fs-6"
                 href="#list-item-1"
                 >PERI PERI MATCH SPECIALS</a
               >
               <a
-                class="list-group-item list-group-item-action my-1"
+                class="list-group-item list-group-item-action mx-3 p-1 ps-lg-2 my-lg-3 fs-6"
                 href="#list-item-2"
                 >CHICKEN BUCKETS</a
               >
               <a
-                class="list-group-item list-group-item-action my-1"
+                class="list-group-item list-group-item-action mx-3 p-1 ps-lg-2 my-lg-3 fs-6"
                 href="#list-item-3"
                 >BIRYANI BUCKETS</a
               >
               <a
-                class="list-group-item list-group-item-action my-1"
+                class="list-group-item list-group-item-action mx-3 p-1 ps-lg-2 my-lg-3 fs-6"
                 href="#list-item-4"
                 >BURGERS</a
               >
               <a
-                class="list-group-item list-group-item-action my-1"
+                class="list-group-item list-group-item-action mx-3 p-1 ps-lg-2 my-lg-3 fs-6"
                 href="#list-item-5"
                 >BEVERAGES</a
               >
             </div>
+            <!-- input box -->
+            <div class="my-1 d-lg-none">
+              <input
+                type="search"
+                id="search"
+                placeholder="search..."
+                style="outline: none"
+                class="px-3 py-1 rounded-pill border-3"
+              />
+            </div>
+            <hr class="border border-1 border-dark d-lg-none opacity-100" />
           </div>
           <!-- card group -->
-          <div class="col-lg-9 my-5">
-            <div
+          <div class="col-lg-9 my-5 px-3">
+            <!-- input box -->
+            <div class="my-2 d-none d-lg-block">
+              <input
+                type="search"
+                id="searchTwo"
+                placeholder="search..."
+                style="outline: none"
+                class="px-3 py-1 rounded-pill border-3"
+              />
+              <hr class="border border-1 border-dark d-lg-block opacity-100" />
+            </div>
+
+            <ul
               data-bs-spy="scroll"
               data-bs-target="#list-example"
               data-bs-smooth-scroll="true"
-              class="scrollspy-example"
-              tabindex="0"
-              style="height: 500px; overflow-y: scroll"
+              class="scrollspy-example list-unstyled"
+              style="height: 500px; overflow-y: scroll;"
+              id="item"
             >
+            <!-- card -->
+            <li>
+              <div id="head">
+              <h4 id="list-item-1" class="fs-2 fw-bold">PERI PERI MATCH SPECIALS</h4>             
+              </div>
               <!-- card 1 row -->
-              <div class="row" id="rowOne">
-                <!-- input box -->
-                <div class="mb-5">
-                  <input
-                    type="search"
-                    name=""
-                    id=""
-                    placeholder="search...."
-                    class="w-50 p-2 rounded-pill border-3"
-                    style="outline: none"
-                  />
-                  <hr class="" />
-                </div>
-                <!-- card -->
-                <h4 id="list-item-1">PERI PERI MATCH SPECIALS</h4>
-
-                <!-- 1 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div id="periCardOne" class="card" style="width: 16rem">
+              <div  id="root1" class="row">
+                
+              <!-- 1 -->
+                <!-- <div id="product" class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
                       src="img/menu-item/D-PR00002144.jpg"
                       class="card-img-top"
@@ -158,14 +188,16 @@
                       <h5 class="card-title">5 Leg Pc & 2 Dips Bucket</h5>
                       <span class=""
                         ><img
-                          src="img/login/Veg_dot_Icon.d1a3902d.svg"
+                          src="img/login/non-veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
                         Non veg</span
                       >
                       <span>₹</span>
-                      <span id="periAmountOne" class="my-2">449.00</span>
+                      <span data-price="449.00"  class="my-2">449.00</span>
                       <p class="card-text mt-3">
                         Save 29% on 5 Spicy Peri Peri Leg Pieces, paired with 2
                         delicous dips (20gm each).
@@ -173,37 +205,17 @@
                     </div>
                     <div class="footer text-center border-0 my-2">
                       <button
-                        id="periRedOne"
-                        class="btn btn-danger fs-6 mb-2 px-2"
+                        class="add-to-cart btn btn-danger fs-6 mb-2 px-2"
+                       data-product="product1"
                       >
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div
-                        id="periOrderNumberOne"
-                        class=""
-                        style="display: none"
-                      >
-                        <button id="periRemoveOne" class="remove btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span
-                          id="periNumberOne"
-                          class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="periAddOne"
-                          class="add btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <!-- 2 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div id="product" class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
                       src="img/menu-item/D-PR00000892.jpg"
                       class="card-img-top"
@@ -213,9 +225,11 @@
                       <h5 class="card-title">Peri Peri 10 Leg Pc & 4 Dips</h5>
                       <span class=""
                         ><img
-                          src="img/login/Veg_dot_Icon.d1a3902d.svg"
+                          src="img/login/non-veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
                         Non veg</span
                       >
@@ -228,37 +242,17 @@
                     </div>
                     <div class="footer text-center border-0 my-2">
                       <button
-                        id="periRedSec"
-                        class="red btn btn-danger fs-6 mb-2 px-2"
+                        class=" add-to-cart btn btn-danger fs-6 mb-2 px-2"
+                        data-product="product2"
                       >
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div
-                        id="periOrderNumberSec"
-                        class=""
-                        style="display: none"
-                      >
-                        <button id="periRemoveSec" class="btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span
-                          id="periNumberSec"
-                          class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="periAddSec"
-                          class="add btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <!-- 3 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div id="product3" class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
                       src="img/menu-item/D-PR00002319.jpg"
                       class="card-img-top"
@@ -268,9 +262,11 @@
                       <h5 class="card-title">Peri Peri 6pc Chicken Strips</h5>
                       <span class=""
                         ><img
-                          src="img/login/Veg_dot_Icon.d1a3902d.svg"
+                          src="img/login/non-veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
                         Non veg</span
                       >
@@ -283,45 +279,27 @@
                     </div>
                     <div class="footer text-center border-0 my-2">
                       <button
-                        id="periRedthird"
-                        class="red btn btn-danger fs-6 mb-2 px-2"
+                        class="add-to-cart btn btn-danger fs-6 mb-2 px-2"
+                        data-product="product3"
                       >
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div
-                        id="periOrderNumberthird"
-                        class="orderNumber"
-                        style="display: none"
-                      >
-                        <button id="periRemovethird" class="remove btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span
-                          id="periNumberthird"
-                          class="number fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="periAddthird"
-                          class="add btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
+                </div> -->
                 </div>
-              </div>
-
+             </li>
+              
+             <li>
+               <h4 id="list-item-2" class="fs-2 fw-bold">CHICKEN BUCKETS</h4>
               <!-- card 2 row -->
-              <div class="row">
-                <h4 id="list-item-2">CHICKEN BUCKETS</h4>
+              <div  id="root2" class="row">
                 <!-- card -->
                 <!-- 1 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
-                      src="img/menu-item/chicken bucket/D-PR00002228.jpg"
+                      src="img/menu-item/chicken-bucket/D-PR00000638.jpg"
                       class="card-img-top"
                       alt="..."
                     />
@@ -329,9 +307,11 @@
                       <h5 class="card-title">The Allu Arjun Combo</h5>
                       <span class=""
                         ><img
-                          src="img/login/Non_veg_dot_Icon.d975d1f9.svg"
+                          src="img/login/non-veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
                         Non veg</span
                       >
@@ -342,31 +322,17 @@
                       </p>
                     </div>
                     <div class="footer text-center border-0 my-2">
-                      <button id="red" class="btn btn-danger fs-6 mb-2 px-2">
+                      <button class="btn btn-danger fs-6 mb-2 px-2">
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div id="orderNumber" class="" style="display: none">
-                        <button id="remove" class="btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span id="number" class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="add"
-                          class="btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <!-- 2 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
-                      src="img/menu-item/chicken bucket/D-PR00000638.jpg"
+                      src="img/menu-item/chicken-bucket/D-PR00000638.jpg"
                       class="card-img-top"
                       alt="..."
                     />
@@ -374,9 +340,11 @@
                       <h5 class="card-title">Ultimate Savings Bucket</h5>
                       <span class=""
                         ><img
-                          src="img/login/Veg_dot_Icon.d1a3902d.svg"
+                          src="img/login/non-veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
                         Non veg</span
                       >
@@ -387,31 +355,17 @@
                       </p>
                     </div>
                     <div class="footer text-center border-0 my-2">
-                      <button id="red" class="btn btn-danger fs-6 mb-2 px-2">
+                      <button class="btn btn-danger fs-6 mb-2 px-2">
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div id="orderNumber" class="" style="display: none">
-                        <button id="remove" class="btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span id="number" class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="add"
-                          class="btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <!-- 3 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
-                      src="img/menu-item/chicken bucket/D-PR00000891.jpg"
+                      src="img/menu-item/chicken-bucket/D-PR00000891.jpg"
                       class="card-img-top"
                       alt="..."
                     />
@@ -419,9 +373,11 @@
                       <h5 class="card-title">Big 8</h5>
                       <span class=""
                         ><img
-                          src="img/login/Veg_dot_Icon.d1a3902d.svg"
+                          src="img/login/non-veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
                         Non veg</span
                       >
@@ -433,37 +389,25 @@
                       </p>
                     </div>
                     <div class="footer text-center border-0 my-2">
-                      <button id="red" class="btn btn-danger fs-6 mb-2 px-2">
+                      <button  class="btn btn-danger fs-6 mb-2 px-2">
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div id="orderNumber" class="" style="display: none">
-                        <button id="remove" class="btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span id="number" class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="add"
-                          class="btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
+             </li>
 
-              <!-- card 3 row -->
-              <div class="row">
-                <h4 id="list-item-3">BIRYANI BUCKETS</h4>
+             <li>
+               <h4 id="list-item-3" class="fs-2 fw-bold">BIRYANI BUCKETS</h4>
+               <!-- card 3 row -->
+               <div  id="root3" class="row root">
                 <!-- card -->
                 <!-- 1 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
-                      src="img/menu-item/briyani/D-K624.jpg"
+                      src="img/menu-item/briyani/D-K622.jpg"
                       class="card-img-top"
                       alt="..."
                     />
@@ -471,9 +415,11 @@
                       <h5 class="card-title">Smoky Grilled Biryani Bucket</h5>
                       <span class=""
                         ><img
-                          src="img/login/Non_veg_dot_Icon.d975d1f9.svg"
-                          alt="non-veg"
+                          src="img/login/veg.png"
+                          alt="veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
                         Non veg</span
                       >
@@ -484,29 +430,15 @@
                       </p>
                     </div>
                     <div class="footer text-center border-0 my-2">
-                      <button id="red" class="btn btn-danger fs-6 mb-2 px-2">
+                      <button  class="btn btn-danger fs-6 mb-2 px-2">
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
-                      </button>
-                      <div id="orderNumber" class="" style="display: none">
-                        <button id="remove" class="btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span id="number" class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="add"
-                          class="btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
+                      </button>  
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <!-- 2 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
                       src="img/menu-item/briyani/D-K625.jpg"
                       class="card-img-top"
@@ -516,9 +448,11 @@
                       <h5 class="card-title">Popcorn Chicken Biryani Bucket</h5>
                       <span class=""
                         ><img
-                          src="img/login/Non_veg_dot_Icon.d975d1f9.svg"
+                          src="img/login/non-veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
                         Non veg</span
                       >
@@ -529,29 +463,15 @@
                       </p>
                     </div>
                     <div class="footer text-center border-0 my-2">
-                      <button id="red" class="btn btn-danger fs-6 mb-2 px-2">
+                      <button class="btn btn-danger fs-6 mb-2 px-2">
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div id="orderNumber" class="" style="display: none">
-                        <button id="remove" class="btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span id="number" class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="add"
-                          class="btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <!-- 3 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
                       src="img/menu-item/briyani/D-K623.jpg"
                       class="card-img-top"
@@ -559,13 +479,15 @@
                     />
                     <div class="card-body">
                       <h5 class="card-title">
-                        Classic Chicken Biryani Bucket (Large
+                        Classic Chicken Biryani Bucket Large
                       </h5>
                       <span class=""
                         ><img
-                          src="img/login/Non_veg_dot_Icon.d975d1f9.svg"
+                          src="img/login/non-veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
                         Non veg</span
                       >
@@ -576,35 +498,23 @@
                       </p>
                     </div>
                     <div class="footer text-center border-0 my-2">
-                      <button id="red" class="btn btn-danger fs-6 mb-2 px-2">
+                      <button class="btn btn-danger fs-6 mb-2 px-2">
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div id="orderNumber" class="" style="display: none">
-                        <button id="remove" class="btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span id="number" class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="add"
-                          class="btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
+             </li>
 
-              <!-- card 4 row -->
-              <div class="row">
-                <h4 id="list-item-4">BURGER</h4>
+             <li>
+               <h4 id="list-item-4" class="fs-2 fw-bold">BURGER</h4>
+               <!-- card 4 row -->
+              <div  id="root4" class="row root">
                 <!-- card -->
                 <!-- 1 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
                       src="img/menu-item/burger/D-PR00001025.jpg"
                       class="card-img-top"
@@ -614,9 +524,11 @@
                       <h5 class="card-title">Mixed Zinger Doubles</h5>
                       <span class=""
                         ><img
-                          src="img/login/Non_veg_dot_Icon.d975d1f9.svg"
+                          src="img/login/non-veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
                         Non veg</span
                       >
@@ -627,29 +539,15 @@
                       </p>
                     </div>
                     <div class="footer text-center border-0 my-2">
-                      <button id="red" class="btn btn-danger fs-6 mb-2 px-2">
+                      <button class="btn btn-danger fs-6 mb-2 px-2">
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div id="orderNumber" class="" style="display: none">
-                        <button id="remove" class="btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span id="number" class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="add"
-                          class="btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <!-- 2 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
                       src="img/menu-item/briyani/D-K625.jpg"
                       class="card-img-top"
@@ -659,9 +557,11 @@
                       <h5 class="card-title">2 Veg Krisper Burgers</h5>
                       <span class=""
                         ><img
-                          src="img/login/Veg_dot_Icon.d1a3902d.svg"
+                          src="img/login/non-veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
                         Non veg</span
                       >
@@ -672,29 +572,15 @@
                       </p>
                     </div>
                     <div class="footer text-center border-0 my-2">
-                      <button id="red" class="btn btn-danger fs-6 mb-2 px-2">
+                      <button class="btn btn-danger fs-6 mb-2 px-2">
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div id="orderNumber" class="" style="display: none">
-                        <button id="remove" class="btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span id="number" class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="add"
-                          class="btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <!-- 3 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
                       src="img/menu-item/briyani/D-K623.jpg"
                       class="card-img-top"
@@ -704,9 +590,11 @@
                       <h5 class="card-title">Tandoori Zinger Burger</h5>
                       <span class=""
                         ><img
-                          src="img/login/Non_veg_dot_Icon.d975d1f9.svg"
+                          src="img/login/non-veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
                         Non veg</span
                       >
@@ -717,178 +605,123 @@
                       </p>
                     </div>
                     <div class="footer text-center border-0 my-2">
-                      <button id="red" class="btn btn-danger fs-6 mb-2 px-2">
+                      <button class="btn btn-danger fs-6 mb-2 px-2">
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div id="orderNumber" class="" style="display: none">
-                        <button id="remove" class="btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span id="number" class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="add"
-                          class="btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
+             </li>
+              
+             <li>
+               <h4 id="list-item-5" class="fs-2 fw-bold">BEVERAGES</h4>
               <!-- card 5 row -->
-              <div class="row">
-                <h4 id="list-item-5">BEVERAGES</h4>
+              <div  id="root5" class="row root">
                 <!-- card -->
                 <!-- 1 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
                       src="img/menu-item/beverges/D-K350.jpg"
                       class="card-img-top"
                       alt="..."
                     />
                     <div class="card-body">
+                      <h5 class="card-title">Pepsi 475ml PET</h5>
                       <span class=""
                         ><img
-                          src="img/login/Veg_dot_Icon.d1a3902d.svg"
+                          src="img/login/veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
-                        Non veg</span
-                      >
-                      <h5 class="card-title">Pepsi 475ml PET</h5>
-                      <span>₹</span><span id="amount" class="my-2">53.57</span>
+                      </span>
+                      <span class="ms-2">₹</span
+                      ><span id="amount" class="my-2">53.57</span>
                     </div>
                     <div class="footer text-center border-0 my-2">
-                      <button id="red" class="btn btn-danger fs-6 mb-2 px-2">
+                      <button class="btn btn-danger fs-6 mb-2 px-2">
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div id="orderNumber" class="" style="display: none">
-                        <button id="remove" class="btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span id="number" class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="add"
-                          class="btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <!-- 2 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
                       src="img/menu-item/beverges/D-K486.jpg"
                       class="card-img-top"
                       alt="..."
                     />
                     <div class="card-body">
+                      <h5 class="card-title">Pepsi Black Can 300 ml</h5>
                       <span class=""
                         ><img
-                          src="img/login/Veg_dot_Icon.d1a3902d.svg"
+                          src="img/login/veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
-                        Non veg</span
-                      >
-                      <h5 class="card-title">Pepsi Black Can 300 ml</h5>
+                      </span>
                       <span>₹</span><span id="amount" class="my-2">57.27</span>
                     </div>
                     <div class="footer text-center border-0 my-2">
-                      <button id="red" class="btn btn-danger fs-6 mb-2 px-2">
+                      <button class="btn btn-danger fs-6 mb-2 px-2">
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div id="orderNumber" class="" style="display: none">
-                        <button id="remove" class="btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span id="number" class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="add"
-                          class="btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <!-- 3 -->
-                <div class="col-xl-4 col-md-6 my-1">
-                  <div class="card" style="width: 16rem">
+                <!-- <div class="col-lg-4 col-md-8 col-9 mx-auto mx-lg-none my-2">
+                  <div class="card h-100">
                     <img
                       src="img/menu-item/beverges/D-K488.jpg"
                       class="card-img-top"
                       alt="..."
                     />
                     <div class="card-body">
+                      <h5 class="card-title">Mirinda Can 300 ml</h5>
                       <span class=""
                         ><img
-                          src="img/login/Veg_dot_Icon.d1a3902d.svg"
+                          src="img/login/veg.png"
                           alt="non-veg"
                           loading="lazy"
+                          width="20px"
+                          class="object-fit"
                         />
-                        Non veg</span
-                      >
-                      <h5 class="card-title">Mirinda Can 300 ml</h5>
+                      </span>
                       <span>₹</span><span id="amount" class="my-2">57.37</span>
                     </div>
                     <div class="footer text-center border-0 my-2">
-                      <button id="red" class="btn btn-danger fs-6 mb-2 px-2">
+                      <button class="btn btn-danger fs-6 mb-2 px-2">
                         ADD To Cart<i class="fa-solid fa-plus mx-2"></i>
                       </button>
-                      <div id="orderNumber" class="" style="display: none">
-                        <button id="remove" class="btn">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span id="number" class="fw-semibold text-dark mx-3"
-                          >0</span
-                        >
-                        <button
-                          id="add"
-                          class="btn border-1 border-danger orounded-3"
-                        >
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
-            </div>
+             </li>
+            </ul>
           </div>
         </div>
       </div>
     </main>
-    <script src="bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
-    <script src="js/menu.js/spyscroll.js"></script>
-    <script src="js/menu.js/bucketAnim.js"></script>
-    <script src="js/menu.js/kfclogo.js"></script>
-    <script src="js/menu.js/menuCard/periCardOne.js"></script>
-    <script src="js/menu.js/menuCard/Count.js"></script>
-
     <!-- ========== End main ========== -->
     <!-- ========== Start footer ========== -->
     <footer>
       <section>
         <div
-          class="container-fluid text-center"
+          class="container-fluid"
           style="background: var(--bg-black); opacity: 92%"
         >
           <div class="row py-5">
             <!-- about -->
-            <div class="col-3">
+            <div class="col-lg-3 col-6">
               <ul class="">
                 <h4 class="fs-4 fw-bold text-opacity-75 text-light">ABOUT</h4>
                 <li class="list-inline my-2">
@@ -908,7 +741,7 @@
               </ul>
             </div>
             <!-- map -->
-            <div class="col-2">
+            <div class="col-lg-2 col-6">
               <ul>
                 <h4 class="fs-4 fw-bold text-light text-opacity-75">
                   SITE MAP
@@ -942,7 +775,7 @@
               </ul>
             </div>
             <!-- nutrition -->
-            <div class="col-3">
+            <div class="col-lg-3 col-6">
               <ul>
                 <h4 class="fs-4 fw-bold text-light text-opacity-75">
                   NUTRITION
@@ -960,7 +793,7 @@
               </ul>
             </div>
             <div
-              class="col-lg-3 col-md-12 justify-content-sm-center d-flex align-items-center gap-3"
+              class="col-lg-3 col-6 justify-content-sm-center d-flex align-items-center gap-3"
             >
               <a href="#">
                 <img
@@ -970,10 +803,7 @@
                   alt="google play"
               /></a>
               <a href="#"
-                ><img
-                  src="img/login/login.png"
-                  width="100"
-                  alt="apple play"
+                ><img src="img/login/login.png" width="100" alt="apple play"
               /></a>
             </div>
           </div>
@@ -1031,4 +861,9 @@
     </footer>
     <!-- ========== End footer ========== -->
   </body>
+  <script src="bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+  <script src="js/menu.js/spyscroll.js"></script>
+  <script src="js/menu.js/kfclogo.js"></script>
+  <script src="js/menu.js/search.js"></script>
+  <script src="js/menu.js/card.js"></script>
 </html>
