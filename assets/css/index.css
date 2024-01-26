@@ -3,7 +3,7 @@
 :root {
   --bg-red: #f40027;
   --bg-white: #ffffff;
-  --bg-black: #000000;
+  --bg-black: #181d24;
   --bg-yellow: #ff8400;
   --text: "Dancing Script", cursive;
   --bg-beige: #f5d4b7;
@@ -44,6 +44,10 @@ body {
   animation-duration: 10s;
   padding: 3px;
 }
+.list-inline-item {
+  margin-right: 0;
+}
+
 @keyframes logo1 {
   0% {
     transform: rotate(0deg);
@@ -52,10 +56,7 @@ body {
     transform: rotate(360deg);
   }
 }
-.home {
-  max-height: 500px;
-  position: relative;
-}
+
 .carousel-control-prev {
   height: 10%;
   width: 50px;
@@ -80,7 +81,7 @@ body {
 /* menu title */
 .menu {
   background: var(--bg-yellow);
-  border-radius: 18px 18px;
+  /* border-radius: 18px 18px; */
   color: var(--bg-white);
   text-decoration: none;
 }
@@ -88,15 +89,6 @@ body {
   color: var(--bg-white);
 }
 
-/* card 5 */
-.card-text {
-  position: relative;
-}
-.card-over {
-  position: absolute;
-  top: 30px;
-  left: 50px;
-}
 .path {
   background: var(--bg-yellow);
   width: 100px;
@@ -155,7 +147,9 @@ body {
   box-shadow: 1px 1px 9px 1px;
 }
 
-@media only screen and (min-width: 992px) {
+
+
+@media only screen and (min-width: 768px) {
   .login_text {
     position: relative;
   }
@@ -168,7 +162,30 @@ body {
     left: -30px;
     z-index: 1;
   }
- 
+  iframe{
+    height: 410px;
+  }
+  .fc-book{
+    min-height: 220px;
+    box-sizing: content-box;
+    font-size: 14px;
+  }
+
+  
+}
+@media only screen and (min-width: 1024px) {
+  .img-overlay{
+    position: absolute;
+    top: 15px;
+    left: 6px;
+ }
+}
+@media only screen and (min-width: 1400px) {
+  .img-overlay{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+ }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -178,11 +195,12 @@ body {
   .login-card {
     position: relative;
     top: -27rem;
-    left: -14rem;
+    left: -18rem;
   }
   .price-card {
     position: relative;
     top: -27rem;
-    left: -15rem;
+    left: -19rem;
   }
+ 
 }
